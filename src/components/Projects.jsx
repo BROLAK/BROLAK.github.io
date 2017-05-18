@@ -1,8 +1,9 @@
 import React from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
-import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import theme from './theme';
 
 const styles = {
   root: {
@@ -11,50 +12,61 @@ const styles = {
     justifyContent: 'space-around',
   },
   gridList: {
-    width: 500,
-    height: 450,
-    overflowY: 'auto',
+    display: 'flex',
+    flexWrap: 'nowrap',
+    overflowX: 'auto',
+  },
+  titleStyle: {
+    color: 'rgb(0, 188, 212)',
   },
 };
 
 const tilesData = [
   {
-    img: 'notify-me.png',
-    title: 'Notify-Me'
+    img: 'https://epicplugins.com/wp-content/uploads/2016/12/notify-me-add-on.png',
+    title: 'Breakfast',
+    author: 'jill111',
   },
   {
-    img: 'images/grid-list/burger-827309_640.jpg',
-    title: 'Movie Links',
+    img: 'https://technikfaultier.files.wordpress.com/2010/01/ipad-notify-me.jpg',
+    title: 'Tasty burger',
     author: 'pashminu',
   },
   {
-    img: 'images/grid-list/morning-819362_640.jpg',
-    title: 'Morning'
-  }
+    img: 'https://www.mobigyaan.com/images/stories/Tablets/Apple/ipad-2-india-notify-me.jpg',
+    title: 'Camera',
+    author: 'Danson67',
+  },
+  {
+    img: 'http://1.bp.blogspot.com/_3N0VetpYvQE/SxJdtPnI5yI/AAAAAAAAAx4/5uJeeRuBKOU/w1200-h630-p-k-nu/Harry_Potter_and_the_Half_Blood_Prince_1.jpg',
+    title: 'Morning',
+    author: 'fancycrave1',
+  },
+  {
+    img: 'http://media-cache-ec0.pinimg.com/736x/90/5c/a7/905ca76e504569164e864e47ef738173.jpg',
+    title: 'Hats',
+    author: 'Hans',
+  },
 ];
 
-/**
- * A simple example of a scrollable `GridList` containing a [Subheader](/#/components/subheader).
- */
-const GridListExampleSimple = () => (
+const Projects = () => (
+	<MuiThemeProvider muiTheme={theme}>
   <div style={styles.root}>
-    <GridList
-      cellHeight={180}
-      style={styles.gridList}
-    >
-      <Subheader>December</Subheader>
+    <GridList style={styles.gridList} cols={2.2}>
       {tilesData.map((tile) => (
         <GridTile
           key={tile.img}
           title={tile.title}
-          subtitle={<span> <b>"{tile.author}"</b></span>}
-          actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+          actionIcon={<IconButton><StarBorder color="rgb(0, 188, 212)" /></IconButton>}
+          titleStyle={styles.titleStyle}
+          titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
         >
           <img src={tile.img} />
         </GridTile>
       ))}
     </GridList>
   </div>
+  </MuiThemeProvider>
 );
 
-export default GridListExampleSimple;
+export default Projects;

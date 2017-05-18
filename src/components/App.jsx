@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Material from './Material';
-import GridListExampleSimple from './Projects';
+import Projects from './Projects';
+import NavBar from './AppBar';
+import Intro from './Intro'
 
 export default class App extends Component {
 	constructor(props) {
@@ -15,15 +15,9 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <MuiThemeProvider>
-                    <Material />
-                </MuiThemeProvider>
-                <MuiThemeProvider>
-                	<Material />
-                </MuiThemeProvider>
-                <MuiThemeProvider>
-                    <GridListExampleSimple />
-                </MuiThemeProvider>
+                <NavBar />
+                <Intro />
+                <Projects />
             </div>
         );
     }
