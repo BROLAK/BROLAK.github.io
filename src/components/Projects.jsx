@@ -2,23 +2,22 @@ import React from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import theme from './theme';
 
 const styles = {
   root: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
+    margin: '2',
   },
   gridList: {
     display: 'flex',
     flexWrap: 'nowrap',
     overflowX: 'auto',
   },
-  titleStyle: {
-    color: 'rgb(0, 188, 212)',
-  },
+  // titleStyle: {
+  //   color: 'rgb(0, 188, 212)',
+  // },
 };
 
 const tilesData = [
@@ -50,14 +49,16 @@ const tilesData = [
 ];
 
 const Projects = () => (
-	<MuiThemeProvider muiTheme={theme}>
   <div style={styles.root}>
     <GridList style={styles.gridList} cols={2.2}>
       {tilesData.map((tile) => (
         <GridTile
           key={tile.img}
           title={tile.title}
-          actionIcon={<IconButton><StarBorder color="rgb(0, 188, 212)" /></IconButton>}
+          actionIcon={<IconButton
+      		iconClassName="muidocs-icon-custom-github" tooltip="Github Link"
+      		tooltipPosition="top-left"
+    	  />}
           titleStyle={styles.titleStyle}
           titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
         >
@@ -66,7 +67,6 @@ const Projects = () => (
       ))}
     </GridList>
   </div>
-  </MuiThemeProvider>
 );
 
 export default Projects;
