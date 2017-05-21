@@ -1,4 +1,4 @@
-import {deepOrange500, amber700,orange800, deepPurple500,
+import {deepOrange900, amber700,orange800, deepPurple500,
 white, darkBlack, fullBlack,
 cyan500, cyan700, pinkA200, grey900,
 grey100, grey300, grey400, grey500,
@@ -9,9 +9,9 @@ import spacing from 'material-ui/styles/spacing';
 
 const theme = getMuiTheme({
   spacing: spacing,
-  fontFamily: 'Roboto, sans-serif',
+  fontFamily: 'Montserrat, sans-serif',
   palette: {
-    primary1Color: deepOrange500,
+    primary1Color: deepOrange900,
     primary2Color: amber700,
     primary3Color: grey400,
     accent1Color: amber700,

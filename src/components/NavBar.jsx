@@ -2,6 +2,7 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
+import GitHubIcon from './subcomponents/GitHubIcon';
 
 //tab index converted to title on app bar
 const indexToTitle = (value) => {
@@ -20,14 +21,12 @@ const indexToTitle = (value) => {
 
 //top bar displaying title (also menu?)
 const NavBar = (props) => (
-	<div>
-	  	<AppBar
+	<AppBar
 	    		title={indexToTitle(props.slideIndex)}
 	    		showMenuIconButton = {false}
 	    		zDepth = {0}
-	    		iconElementRight={<IconButton iconClassName="home" />}
-	  	/>
-	</div>
+	    		iconElementRight={<GitHubIcon />}
+	/>
 );
 
 export default NavBar;

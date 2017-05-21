@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar';
 import Display from './Display';
-import Footer from './Footer';
 
 export default class App extends Component {
     //begin at home slide index
     constructor(props) {
     	super(props);
     	this.state = {
-            slideIndex: 0
+            slideIndex: 1
     	}
         this.handleSlide = this.handleSlide.bind(this);
   	}
@@ -26,7 +25,6 @@ export default class App extends Component {
             <div>
                 {NavBar({slideIndex:this.state.slideIndex})}
                 {Display({slideIndex:this.state.slideIndex,handleSlide:this.handleSlide})}
-                {Footer()}
             </div>
         );
     }
