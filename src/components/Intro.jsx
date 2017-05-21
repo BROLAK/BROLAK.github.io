@@ -3,7 +3,7 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 
 const Intro = () => (
   <Card>
-    <CardTitle title="Matthew Borlak" subtitle="Full Stack Developer"/>
+    <CardTitle title="Mati Borlak" subtitle="Full Stack Developer"/>
     <CardText>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.

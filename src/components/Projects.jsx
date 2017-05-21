@@ -14,10 +14,7 @@ const styles = {
     display: 'flex',
     flexWrap: 'nowrap',
     overflowX: 'auto',
-  },
-  // titleStyle: {
-  //   color: 'rgb(0, 188, 212)',
-  // },
+  }
 };
 
 const tilesData = [

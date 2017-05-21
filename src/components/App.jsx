@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
-import Projects from './Projects';
 import NavBar from './NavBar';
-import Intro from './Intro'
 
 export default class App extends Component {
 	constructor(props) {
     	super(props);
     	this.state = {
-      		title: "Home"
-    	};
-  	};
+      		title: "Portfolio",
+            slideIndex: 0
+    	}
+        this.handleSlide = this.handleSlide.bind(this);
+  	}
+
+    handleSlide(value) {
+    this.setState({
+        slideIndex: value,
+        });
+    };
 
     render() {
         return (
             <div>
-                <NavBar title={this.state.title}/>
-                <Intro />
-                <Projects />
+                <NavBar 
+                title={this.state.title} 
+                slideIndex={this.state.slideIndex}
+                handleSlide={this.handleSlide}
+                />
             </div>
         );
     }
